@@ -4,34 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Para Bibia 💖</title>
-
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
 
   <style>
-
     :root {
       --rose-deep:   #c0395b;
-      --rose-mid:    #e8547a;
-      --rose-soft:   #f9a8c9;
       --plum:        #7b2d5e;
-      --lavender:    #c084d4;
-      --cream:       #fff5f8;
+      --rose-soft:   #f9a8c9;
       --gold:        #f7c5a0;
       --white-glass: rgba(255,255,255,0.18);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; min-height: 100%; overflow-x: hidden; font-family: 'Lato', sans-serif; }
 
-    html, body {
-      width: 100%; min-height: 100%;
-      overflow-x: hidden;
-      font-family: 'Lato', sans-serif;
-    }
-
-    
     body {
       background: linear-gradient(135deg, #2a0a2e 0%, #6b1a4a 30%, #c0395b 65%, #f08080 100%);
       background-size: 300% 300%;
@@ -39,14 +27,12 @@
       min-height: 100vh;
       position: relative;
     }
-
     @keyframes bgShift {
       0%   { background-position: 0% 50%; }
       50%  { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -54,23 +40,14 @@
       pointer-events: none; z-index: 0;
     }
 
-    #particles-canvas {
-      position: fixed; inset: 0;
-      pointer-events: none; z-index: 1;
-    }
-
+    #particles-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 1; }
 
     .heart-fall {
-      position: fixed;
-      top: -60px;
-      font-size: 1.5rem;
+      position: fixed; top: -60px; font-size: 1.5rem;
       animation: fall linear forwards;
-      pointer-events: none;
-      z-index: 2;
-      opacity: 0;
+      pointer-events: none; z-index: 2; opacity: 0;
       filter: drop-shadow(0 0 6px rgba(240,100,140,0.7));
     }
-
     @keyframes fall {
       0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
       80%  { opacity: 0.8; }
@@ -94,225 +71,205 @@
       border-radius: 2.5rem;
       padding: 3rem 2.5rem 3.5rem;
       max-width: 560px; width: 100%;
-      box-shadow:
-        0 8px 40px rgba(90,0,60,0.4),
-        0 0 0 1px rgba(255,255,255,0.1) inset;
+      box-shadow: 0 8px 40px rgba(90,0,60,0.4), 0 0 0 1px rgba(255,255,255,0.1) inset;
     }
 
-    .name-wrap {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 0.5rem;
-    }
+    .name-wrap { position: relative; display: inline-block; margin-bottom: 0.5rem; }
 
     .name {
       font-family: 'Playfair Display', serif;
       font-size: clamp(4rem, 16vw, 7rem);
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: 0.04em;
-
+      font-weight: 700; line-height: 1; letter-spacing: 0.04em;
       background: linear-gradient(135deg, #ffe0ec 0%, #f7c5a0 40%, #e8547a 80%, #c0395b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-
-      filter: drop-shadow(0 4px 18px rgba(224,80,100,0.5));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       animation: nameGlow 3s ease-in-out infinite alternate;
     }
-
     @keyframes nameGlow {
       from { filter: drop-shadow(0 4px 18px rgba(224,80,100,0.4)); }
       to   { filter: drop-shadow(0 4px 32px rgba(247,197,160,0.9)); }
     }
 
-    .crown-heart {
-      display: block;
-      font-size: 2rem;
-      animation: spin 4s linear infinite;
-      margin-bottom: 0.25rem;
-    }
-
-    @keyframes spin {
+    .crown-heart { display: block; font-size: 2rem; animation: swing 4s ease-in-out infinite; margin-bottom: 0.25rem; }
+    @keyframes swing {
       from { transform: rotate(-15deg) scale(1); }
       50%  { transform: rotate(15deg) scale(1.2); }
       to   { transform: rotate(-15deg) scale(1); }
     }
 
- 
     .subtitle {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
+      font-family: 'Playfair Display', serif; font-style: italic;
       font-size: clamp(1rem, 4vw, 1.25rem);
       color: rgba(255,255,255,0.85);
-      margin: 1.2rem 0 2.5rem;
-      line-height: 1.6;
-      letter-spacing: 0.01em;
+      margin: 1.2rem 0 2.5rem; line-height: 1.6;
     }
 
     .btn-reveal {
-      position: relative;
-      padding: 1rem 2.5rem;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #fff;
-      background: linear-gradient(135deg, var(--rose-deep), var(--plum));
-      border: none; border-radius: 100px;
-      cursor: pointer;
-      overflow: hidden;
+      position: relative; padding: 1rem 2.5rem;
+      font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700;
+      color: #fff; background: linear-gradient(135deg, var(--rose-deep), var(--plum));
+      border: none; border-radius: 100px; cursor: pointer; overflow: hidden;
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 6px 30px rgba(100,0,60,0.5);
-      letter-spacing: 0.03em;
+      box-shadow: 0 6px 30px rgba(100,0,60,0.5); letter-spacing: 0.03em;
     }
-
     .btn-reveal::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
+      content: ''; position: absolute; top: 0; left: -100%;
       width: 60%; height: 100%;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      transform: skewX(-20deg);
-      transition: left 0.5s;
+      transform: skewX(-20deg); transition: left 0.5s;
     }
-
     .btn-reveal:hover::before { left: 160%; }
+    .btn-reveal:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 10px 40px rgba(200,50,100,0.7); }
+    .btn-reveal:active { transform: scale(0.96); }
+    .btn-reveal.hidden { pointer-events: none; animation: btnBye 0.4s ease forwards; }
+    @keyframes btnBye { to { opacity: 0; transform: scale(0.8) translateY(10px); } }
 
-    .btn-reveal:hover {
-      transform: translateY(-3px) scale(1.04);
-      box-shadow: 0 10px 40px rgba(200,50,100,0.7);
-    }
+    .message-wrap { display: none; opacity: 0; transform: translateY(20px); }
+    .message-wrap.show { display: block; animation: msgIn 1s ease 0.2s forwards; }
+    @keyframes msgIn { to { opacity: 1; transform: translateY(0); } }
 
-    .btn-reveal:active {
-      transform: scale(0.96);
-    }
-
-
-    .btn-reveal.hidden {
-      pointer-events: none;
-      animation: btnBye 0.4s ease forwards;
-    }
-
-    @keyframes btnBye {
-      to { opacity: 0; transform: scale(0.8) translateY(10px); }
-    }
-
-    
-    .message-wrap {
-      display: none;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    .message-wrap.show {
-      display: block;
-      animation: msgIn 1s ease 0.2s forwards;
-    }
-
-    @keyframes msgIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-  
-    .divider {
-      font-size: 1.4rem;
-      letter-spacing: 0.6rem;
-      color: var(--gold);
-      margin: 1.5rem 0;
-      opacity: 0.8;
-    }
+    .divider { font-size: 1.4rem; letter-spacing: 0.6rem; color: var(--gold); margin: 1.5rem 0; opacity: 0.8; }
 
     .message-text {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.05rem, 4vw, 1.35rem);
-      color: #fff;
-      line-height: 1.8;
+      color: #fff; line-height: 1.8;
       text-shadow: 0 2px 12px rgba(100,0,60,0.5);
     }
+    .message-signature { margin-top: 1.8rem; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--rose-soft); opacity: 0.9; }
 
-    .message-text em {
-      font-style: italic;
-      color: var(--gold);
+    .pulse-heart { display: inline-block; animation: pulse 1.2s ease infinite; }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.35); } }
+
+    .btn-certidao {
+      display: inline-block; margin-top: 2rem;
+      padding: 0.85rem 2rem;
+      font-family: 'Playfair Display', serif; font-size: 1rem; font-style: italic;
+      color: var(--gold); background: transparent;
+      border: 1.5px solid var(--gold); border-radius: 100px;
+      cursor: pointer; transition: all 0.3s; letter-spacing: 0.04em;
+      opacity: 0; transform: translateY(10px);
     }
-
-    .message-signature {
-      margin-top: 1.8rem;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--rose-soft);
-      opacity: 0.9;
-    }
-
-
-    .pulse-heart {
-      display: inline-block;
-      animation: pulse 1.2s ease infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50%       { transform: scale(1.35); }
-    }
+    .btn-certidao.show { animation: msgIn 0.8s ease 1.2s forwards; }
+    .btn-certidao:hover { background: rgba(247,197,160,0.15); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(247,197,160,0.3); }
 
     .music-btn {
-      position: fixed;
-      bottom: 1.5rem; right: 1.5rem;
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      background: var(--white-glass);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.35);
-      color: #fff;
-      font-size: 1.3rem;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      transition: transform 0.2s, background 0.2s;
-      z-index: 100;
+      position: fixed; bottom: 1.5rem; right: 1.5rem;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--white-glass); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.35); color: #fff; font-size: 1.3rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3); transition: transform 0.2s; z-index: 100;
     }
-
-    .music-btn:hover { transform: scale(1.1); background: rgba(255,255,255,0.28); }
+    .music-btn:hover { transform: scale(1.1); }
     .music-btn.playing { animation: musicPulse 1.5s ease infinite; }
-
     @keyframes musicPulse {
       0%, 100% { box-shadow: 0 4px 20px rgba(200,50,100,0.3); }
       50%       { box-shadow: 0 4px 30px rgba(200,50,100,0.8); }
     }
 
+    /* CERTIDÃO */
+    #certidao-overlay {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(20,5,25,0.88);
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      overflow-y: auto; padding: 2rem 1rem 4rem;
+    }
+    #certidao-overlay.active { display: block; animation: fadeIn 0.5s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    @media (max-width: 400px) {
+    .certidao-papel {
+      position: relative; max-width: 640px; margin: 0 auto;
+      background: #fdf6e8; border-radius: 1rem;
+      padding: 3rem 2.5rem 2.5rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 8px #e8d5a3, 0 0 0 10px #c9a96e;
+      color: #3a1f0e;
+    }
+    .certidao-papel::before, .certidao-papel::after {
+      content: '❧'; position: absolute; font-size: 2.5rem; color: #b8860b; opacity: 0.35;
+    }
+    .certidao-papel::before { top: 0.6rem; left: 0.9rem; }
+    .certidao-papel::after  { bottom: 4.5rem; right: 0.9rem; transform: scaleX(-1); }
+
+    .certidao-brasao { text-align: center; font-size: 3rem; margin-bottom: 0.4rem; }
+
+    .certidao-titulo { font-family: 'Playfair Display', serif; text-align: center; color: #7b3a00; }
+    .certidao-titulo .oficina { font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; opacity: 0.65; margin-bottom: 0.2rem; }
+    .certidao-titulo h2 { font-size: clamp(1.4rem, 5.5vw, 2rem); font-weight: 700; line-height: 1.2; }
+    .certidao-titulo .sub { font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.55; margin-top: 0.3rem; }
+
+    .cert-divider { width: 100%; height: 2px; background: linear-gradient(90deg, transparent, #b8860b, transparent); margin: 1.4rem 0; opacity: 0.55; }
+
+    .certidao-corpo { font-family: 'Playfair Display', serif; font-size: clamp(0.87rem, 3vw, 0.98rem); line-height: 1.95; color: #3a1f0e; text-align: justify; }
+    .certidao-corpo .destaque { font-weight: 700; font-size: 1.05em; color: #7b3a00; }
+    .certidao-corpo .data { font-style: italic; color: #7b3a00; }
+
+    .assinaturas { display: flex; gap: 1.5rem; margin-top: 2.5rem; flex-wrap: wrap; }
+    .assinatura-bloco { flex: 1; min-width: 150px; display: flex; flex-direction: column; align-items: center; }
+
+    .sig-canvas-wrap { position: relative; width: 100%; border-bottom: 1.5px solid #b8860b; cursor: crosshair; }
+    .sig-canvas-wrap canvas { display: block; width: 100%; height: 80px; touch-action: none; }
+    .sig-placeholder {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.78rem;
+      color: #c9a96e; pointer-events: none; transition: opacity 0.3s;
+    }
+    .sig-label { font-family: 'Playfair Display', serif; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #7b3a00; margin-top: 0.5rem; opacity: 0.75; text-align: center; }
+    .sig-clear { margin-top: 0.3rem; font-size: 0.68rem; color: #b8860b; background: none; border: none; cursor: pointer; font-family: 'Lato', sans-serif; text-decoration: underline; opacity: 0.65; }
+    .sig-clear:hover { opacity: 1; }
+
+    .sig-pre { width: 100%; height: 80px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; color: #3a1f0e; border-bottom: 1.5px solid #b8860b; opacity: 0.82; }
+
+    .certidao-rodape { text-align: center; margin-top: 1.8rem; font-family: 'Playfair Display', serif; font-size: 0.72rem; color: #b8860b; opacity: 0.65; letter-spacing: 0.1em; }
+
+    .cert-selo {
+      position: absolute; bottom: 2.5rem; right: 1.8rem;
+      width: 68px; height: 68px; border-radius: 50%;
+      border: 2px dashed #b8860b;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-size: 0.43rem; letter-spacing: 0.07em; text-transform: uppercase;
+      color: #b8860b; opacity: 0.5; text-align: center; line-height: 1.4;
+      font-family: 'Playfair Display', serif;
+    }
+    .cert-selo .selo-icon { font-size: 1.2rem; margin-bottom: 2px; }
+
+    .btn-fechar {
+      display: block; margin: 1.5rem auto 0;
+      padding: 0.6rem 1.8rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.9rem;
+      color: #fff; background: rgba(120,40,60,0.75);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 100px;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .btn-fechar:hover { background: rgba(120,40,60,1); }
+
+    @media (max-width: 480px) {
       .card { padding: 2rem 1.25rem 2.5rem; border-radius: 1.8rem; }
+      .certidao-papel { padding: 2rem 1.25rem 2rem; }
+      .cert-selo { display: none; }
     }
   </style>
 </head>
 <body>
 
->
 <canvas id="particles-canvas"></canvas>
-
 
 <div class="stage">
   <div class="card">
-
 
     <div class="name-wrap">
       <span class="crown-heart">💗</span>
       <h1 class="name">Bibia</h1>
     </div>
 
-
     <p class="subtitle">
       Tem uma coisa que eu precisava te falar...<br>
       <span style="font-size:0.9em; opacity:0.7;">(clica aí 🌹)</span>
     </p>
 
-
     <button class="btn-reveal" id="btnReveal" onclick="revelar()">
       Clique aqui ❤️
     </button>
-
 
     <div class="message-wrap" id="msgWrap">
       <div class="divider">✦ ✦ ✦</div>
@@ -320,37 +277,106 @@
         Beatriz, você foi a melhor memória que eu pude criar. Queria poder ter feito mais por você — você merece o universo, e eu só pude te dar o mundo.<br><br>
         Tenho muito orgulho da pessoa que você vem se tornando. É difícil admitir isso, mas sou seu maior fã. Você é uma menina linda, inteligente e dedicada — de verdade.<br><br>
         Espero que você seja muito feliz na sua vida, e espero poder acompanhar cada passo da sua evolução, cada vez mais de perto.
-        <span class="pulse-heart"> Eu te amo ❤️</span>
+        <span class="pulse-heart"> Eu te amo ❤️</span><br><br>
+        <strong style="font-size:1.1em; color:var(--gold);">Eu te amo mil milhões. 💖</strong>
       </p>
       <p class="message-signature">— sempre 🌹</p>
+      <button class="btn-certidao" id="btnCertidao" onclick="abrirCertidao()">
+        📜 Ver nossa certidão
+      </button>
     </div>
 
   </div>
 </div>
 
+<!-- CERTIDÃO -->
+<div id="certidao-overlay">
+  <div class="certidao-papel">
+
+    <div class="certidao-brasao">💍</div>
+
+    <div class="certidao-titulo">
+      <p class="oficina">Cartório do Amor — Registro Especial</p>
+      <h2>Certidão de União</h2>
+      <p class="sub">Documento simbólico de afeto</p>
+    </div>
+
+    <div class="cert-divider"></div>
+
+    <div class="certidao-corpo">
+      <p>
+        Aos <span class="data" id="cert-data"></span>, perante o amor que une dois corações,
+        lavrou-se a presente certidão para que conste que
+        <span class="destaque">Beatriz</span> e seu amor prometem
+        um ao outro cumplicidade, cuidado e carinho sem medida.
+      </p>
+      <br>
+      <p>
+        Declaram que escolhem um ao outro não pela perfeição,
+        mas pela vontade sincera de crescer juntos — nos dias fáceis
+        e também nos difíceis. Prometem ouvir, apoiar e nunca deixar
+        de surpreender um ao outro com pequenos gestos de afeto.
+      </p>
+      <br>
+      <p>
+        Este documento não tem validade jurídica, mas tem
+        <em>validade no coração</em> — e isso é o que importa de verdade.<br><br>
+        <strong class="destaque">Eu te amo mil milhões.</strong>
+      </p>
+    </div>
+
+    <div class="cert-divider"></div>
+
+    <div class="assinaturas">
+
+      <div class="assinatura-bloco">
+        <div class="sig-pre">Seu amor 🌹</div>
+        <p class="sig-label">&nbsp;</p>
+      </div>
+
+      <div class="assinatura-bloco">
+        <div class="sig-canvas-wrap" id="sigWrap">
+          <canvas id="sigCanvas"></canvas>
+          <div class="sig-placeholder" id="sigPlaceholder">Assine aqui, Bibia ✦</div>
+        </div>
+        <p class="sig-label">Beatriz</p>
+        <button class="sig-clear" onclick="limparAssinatura()">↩ apagar</button>
+      </div>
+
+    </div>
+
+    <div class="certidao-rodape">
+      Registrado com amor · Valor sentimental: infinito
+    </div>
+
+    <div class="cert-selo">
+      <span class="selo-icon">💖</span>
+      Reconhecido<br>com carinho
+    </div>
+
+  </div>
+
+  <button class="btn-fechar" onclick="fecharCertidao()">← voltar</button>
+</div>
+
 <button class="music-btn" id="musicBtn" title="Música" onclick="toggleMusic()">🎵</button>
 
-
 <script>
+  /* ---- WEB AUDIO ---- */
+  var audioCtx = null;
+  var musicPlaying = false;
+  var musicScheduler = null;
 
-  let audioCtx = null;
-  let musicNodes = [];
-  let musicPlaying = false;
-  let musicScheduler = null;
-
-  
-  const melody = [
+  var melody = [
     523.25, 659.25, 783.99, 659.25,
     523.25, 783.99, 1046.5, 783.99,
     659.25, 523.25, 440.00, 523.25,
     392.00, 493.88, 523.25, 392.00
   ];
 
-  let noteIndex = 0;
-
   function playNote(freq, time, dur) {
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
     osc.connect(gain);
     gain.connect(audioCtx.destination);
     osc.type = 'sine';
@@ -363,21 +389,23 @@
   }
 
   function scheduleMelody() {
-    const bpm = 72;
-    const beatDur = 60 / bpm;
-    let t = audioCtx.currentTime;
-    for (let i = 0; i < melody.length; i++) {
+    var bpm = 72;
+    var beatDur = 60 / bpm;
+    var t = audioCtx.currentTime;
+    for (var i = 0; i < melody.length; i++) {
       playNote(melody[i], t + i * beatDur, beatDur * 0.85);
     }
-    const totalDur = melody.length * beatDur * 1000;
+    var totalDur = melody.length * beatDur * 1000;
     musicScheduler = setTimeout(scheduleMelody, totalDur - 200);
   }
 
   function toggleMusic() {
-    const btn = document.getElementById('musicBtn');
-    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    var btn = document.getElementById('musicBtn');
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
     if (!musicPlaying) {
-      if (audioCtx.state === 'suspended') audioCtx.resume();
+      if (audioCtx.state === 'suspended') { audioCtx.resume(); }
       scheduleMelody();
       musicPlaying = true;
       btn.textContent = '🔊';
@@ -390,93 +418,202 @@
     }
   }
 
-
+  /* ---- REVELAR ---- */
   function revelar() {
-    const btn = document.getElementById('btnReveal');
-    const msg = document.getElementById('msgWrap');
-
+    var btn = document.getElementById('btnReveal');
+    var msg = document.getElementById('msgWrap');
 
     btn.classList.add('hidden');
 
-
-    setTimeout(() => { msg.classList.add('show'); }, 450);
-
+    setTimeout(function() {
+      msg.classList.add('show');
+      var btnC = document.getElementById('btnCertidao');
+      if (btnC) { btnC.classList.add('show'); }
+    }, 450);
 
     chuvaDeCoracoes(40);
 
-
-    if (!musicPlaying) toggleMusic();
+    if (!musicPlaying) { toggleMusic(); }
   }
 
-  const heartEmojis = ['❤️','💖','💕','💗','💓','🌹','💝','✨'];
+  /* ---- CORAÇÕES ---- */
+  var heartEmojis = ['❤️','💖','💕','💗','💓','🌹','💝','✨'];
 
   function criarCoracao() {
-    const el = document.createElement('div');
+    var el = document.createElement('div');
     el.classList.add('heart-fall');
     el.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-    el.style.left = Math.random() * 100 + 'vw';
-    const dur = 3.5 + Math.random() * 3;
+    el.style.left = (Math.random() * 100) + 'vw';
+    var dur = 3.5 + Math.random() * 3;
     el.style.animationDuration = dur + 's';
     el.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
     document.body.appendChild(el);
-    el.addEventListener('animationend', () => el.remove());
+    el.addEventListener('animationend', function() { el.remove(); });
   }
 
   function chuvaDeCoracoes(total) {
-    let count = 0;
-    const id = setInterval(() => {
+    var count = 0;
+    var id = setInterval(function() {
       criarCoracao();
       count++;
-      if (count >= total) clearInterval(id);
+      if (count >= total) { clearInterval(id); }
     }, 90);
   }
 
-  setInterval(() => {
+  setInterval(function() {
     criarCoracao();
     setTimeout(criarCoracao, 400);
   }, 2800);
 
+  /* ---- CERTIDÃO ---- */
+  function abrirCertidao() {
+    var meses = ['janeiro','fevereiro','março','abril','maio','junho',
+                 'julho','agosto','setembro','outubro','novembro','dezembro'];
+    var d = new Date();
+    document.getElementById('cert-data').textContent =
+      d.getDate() + ' de ' + meses[d.getMonth()] + ' de ' + d.getFullYear();
 
-  (function initParticles() {
-    const canvas = document.getElementById('particles-canvas');
-    const ctx = canvas.getContext('2d');
-    let W, H, particles;
+    document.getElementById('certidao-overlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+    initCanvas();
+  }
+
+  function fecharCertidao() {
+    document.getElementById('certidao-overlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  /* ---- CANVAS ASSINATURA ---- */
+  var sigCtx = null;
+  var sigCv = null;
+  var drawing = false;
+  var canvasReady = false;
+
+  function initCanvas() {
+    if (canvasReady) { return; }
+    canvasReady = true;
+
+    sigCv = document.getElementById('sigCanvas');
+    var wrap = document.getElementById('sigWrap');
+    var W = wrap.clientWidth;
+    var dpr = window.devicePixelRatio || 1;
+
+    sigCv.width  = W * dpr;
+    sigCv.height = 80 * dpr;
+    sigCv.style.width  = W + 'px';
+    sigCv.style.height = '80px';
+
+    sigCtx = sigCv.getContext('2d');
+    sigCtx.scale(dpr, dpr);
+    sigCtx.strokeStyle = '#3a1f0e';
+    sigCtx.lineWidth = 2;
+    sigCtx.lineCap = 'round';
+    sigCtx.lineJoin = 'round';
+
+    sigCv.addEventListener('mousedown',  onMouseDown);
+    sigCv.addEventListener('mousemove',  onMouseMove);
+    sigCv.addEventListener('mouseup',    onEnd);
+    sigCv.addEventListener('mouseleave', onEnd);
+    sigCv.addEventListener('touchstart', onTouchStart, { passive: false });
+    sigCv.addEventListener('touchmove',  onTouchMove,  { passive: false });
+    sigCv.addEventListener('touchend',   onEnd);
+  }
+
+  function getXY(e) {
+    var r = sigCv.getBoundingClientRect();
+    return { x: e.clientX - r.left, y: e.clientY - r.top };
+  }
+
+  function hidePlaceholder() {
+    document.getElementById('sigPlaceholder').style.opacity = '0';
+  }
+
+  function onMouseDown(e) {
+    drawing = true;
+    var p = getXY(e);
+    sigCtx.beginPath();
+    sigCtx.moveTo(p.x, p.y);
+    hidePlaceholder();
+  }
+
+  function onMouseMove(e) {
+    if (!drawing) { return; }
+    var p = getXY(e);
+    sigCtx.lineTo(p.x, p.y);
+    sigCtx.stroke();
+  }
+
+  function onEnd() { drawing = false; }
+
+  function onTouchStart(e) {
+    e.preventDefault();
+    drawing = true;
+    var t = e.touches[0];
+    var r = sigCv.getBoundingClientRect();
+    sigCtx.beginPath();
+    sigCtx.moveTo(t.clientX - r.left, t.clientY - r.top);
+    hidePlaceholder();
+  }
+
+  function onTouchMove(e) {
+    e.preventDefault();
+    if (!drawing) { return; }
+    var t = e.touches[0];
+    var r = sigCv.getBoundingClientRect();
+    sigCtx.lineTo(t.clientX - r.left, t.clientY - r.top);
+    sigCtx.stroke();
+  }
+
+  function limparAssinatura() {
+    if (!sigCtx) { return; }
+    sigCtx.clearRect(0, 0, sigCv.width, sigCv.height);
+    document.getElementById('sigPlaceholder').style.opacity = '1';
+  }
+
+  /* ---- PARTÍCULAS ---- */
+  (function() {
+    var canvas = document.getElementById('particles-canvas');
+    var ctx = canvas.getContext('2d');
+    var W, H, particles;
 
     function resize() {
       W = canvas.width  = window.innerWidth;
       H = canvas.height = window.innerHeight;
     }
 
-    function rand(min, max) { return min + Math.random() * (max - min); }
+    function rand(a, b) { return a + Math.random() * (b - a); }
 
     function createParticles() {
-      const count = Math.min(80, Math.floor(W * H / 14000));
-      particles = Array.from({ length: count }, () => ({
-        x: rand(0, W), y: rand(0, H),
-        vx: rand(-0.2, 0.2), vy: rand(-0.35, -0.05),
-        r: rand(1, 2.8),
-        alpha: rand(0.3, 0.9),
-        dAlpha: rand(0.003, 0.008) * (Math.random() > 0.5 ? 1 : -1)
-      }));
+      var count = Math.min(80, Math.floor(W * H / 14000));
+      particles = [];
+      for (var i = 0; i < count; i++) {
+        particles.push({
+          x: rand(0, W), y: rand(0, H),
+          vx: rand(-0.2, 0.2), vy: rand(-0.35, -0.05),
+          r: rand(1, 2.8),
+          alpha: rand(0.3, 0.9),
+          dAlpha: rand(0.003, 0.008) * (Math.random() > 0.5 ? 1 : -1)
+        });
+      }
     }
 
     function draw() {
       ctx.clearRect(0, 0, W, H);
-      for (const p of particles) {
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
         p.x += p.vx; p.y += p.vy;
         p.alpha += p.dAlpha;
-        if (p.alpha <= 0.1 || p.alpha >= 1) p.dAlpha *= -1;
+        if (p.alpha <= 0.1 || p.alpha >= 1) { p.dAlpha *= -1; }
         if (p.y < -10) { p.y = H + 10; p.x = rand(0, W); }
-
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,210,230,${p.alpha})`;
+        ctx.fillStyle = 'rgba(255,210,230,' + p.alpha + ')';
         ctx.fill();
       }
       requestAnimationFrame(draw);
     }
 
-    window.addEventListener('resize', () => { resize(); createParticles(); });
+    window.addEventListener('resize', function() { resize(); createParticles(); });
     resize();
     createParticles();
     draw();
@@ -485,3 +622,4 @@
 
 </body>
 </html>
+
